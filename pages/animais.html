@@ -9,19 +9,19 @@
     
     <style>
         * {
-    /* Remove o destaque azul ao tocar em links e botões no mobile */
-    -webkit-tap-highlight-color: transparent;
-}
+            -webkit-tap-highlight-color: transparent;
+        }
 
-/* Remove a borda de foco (outline) que aparece em alguns navegadores */
-a:focus, button:focus, .pill-button:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
+        a:focus, button:focus, .pill-button:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
         .pill-button:active {
-    transform: scale(0.96);
-    transition: transform 0.1s;
-}
+            transform: scale(0.96);
+            transition: transform 0.1s;
+        }
+
         :root {
             --shopee-orange: #EE4D2D;
             --shopee-orange-light: #ff7e5f;
@@ -91,17 +91,12 @@ a:focus, button:focus, .pill-button:focus {
             margin-bottom: 20px;
         }
 
-        /* Ícone de Animais no Topo */
         .hero-section .main-icon {
             font-size: 80px;
             color: var(--white);
             margin-bottom: 15px;
             filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
             transition: transform 0.3s ease;
-        }
-
-        .hero-section .main-icon:hover {
-            transform: scale(1.1);
         }
 
         h1 {
@@ -131,7 +126,7 @@ a:focus, button:focus, .pill-button:focus {
             text-decoration: none;
             display: flex;
             align-items: center;
-            padding: 10px;
+            padding: 8px 10px; /* Reduzi um pouco o padding vertical para compensar a imagem */
             border-radius: 60px;
             font-weight: 600;
             font-size: 1rem;
@@ -147,28 +142,29 @@ a:focus, button:focus, .pill-button:focus {
             border-color: var(--white);
         }
 
+        /* --- MODIFICAÇÃO DO CÍRCULO PARA IMAGEM --- */
         .icon-circle {
             background-color: var(--shopee-orange);
-            color: var(--white);
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin-right: 15px;
-            font-size: 1.2rem;
+            overflow: hidden; /* Corta a imagem em formato de círculo */
+            flex-shrink: 0; /* Impede o círculo de achatar */
             transition: 0.4s;
         }
-        
-        .pill-button:hover .icon-circle {
-            background-color: var(--white);
-            color: var(--shopee-orange);
+
+        .icon-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Faz a foto preencher o círculo sem distorcer */
         }
 
         .label { flex-grow: 1; text-align: left; }
 
-        /* Botão Voltar */
         .btn-back {
             margin-top: 30px;
             display: inline-block;
@@ -212,28 +208,38 @@ a:focus, button:focus, .pill-button:focus {
         </div>
 
         <div class="links-container">
-            <a href="https://shopee.com.br/product/1388877641/19298299317?exp_group=rollout&gads_t_sig=VTJGc2RHVmtYMTlxTFVSVVRrdENkU1hZSjF1Ym94QW1tdXlLQVFLQ3hjNXBkczJ6U2l3VEh5T1haODRWd1FPaTZvUGNkbk5PTUJzSHBlSTFXa0JHTXRCckl1RG9KdDEvWDZsNkh3c2tnUk5Jd0hBOFAxZWs3N3B6L0xiOVVpc09URUM3cUY3RXI2Ukt3ZWJDWDNubzZ2TnpJUFVxWENmQU4rL1F2dWhCcjU4PQ&mmp_pid=an_18353770891&uls_trackid=54pre1ds00qq&utm_campaign=id_zFvVlKYejf&utm_content=----&utm_medium=affiliates&utm_source=an_18353770891&utm_term=ecqbeohe6w1h" class="pill-button">
-                <div class="icon-circle"><i class="fa-solid fa-dog"></i></div>
+            <a href="URL_DA_SHOPEE" class="pill-button">
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/150" alt="Produto 01">
+                </div>
                 <span class="label">Colherzinha - Para Petsico </span>
             </a>
             
-            <a href="https://www.cobasi.com.br/ograx-plus-5-para-caes-e-gatos-avert-31181394/p?idsku=1181394&snrai_campaign=bkbTMNqdMpgE&snrai_id=da1d7a47-b0a9-46ba-9c52-9915ee444925" class="pill-button">
-                <div class="icon-circle"><i class="fa-solid fa-cat"></i></div>
+            <a href="URL_DO_PRODUTO" class="pill-button">
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/150" alt="Produto 02">
+                </div>
                 <span class="label">Item Pet 02 - Em breve</span>
             </a>
 
             <a href="#" class="pill-button">
-                <div class="icon-circle"><i class="fa-solid fa-bone"></i></div>
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/150" alt="Produto 03">
+                </div>
                 <span class="label">Item Pet 03 - Em breve</span>
             </a>
 
             <a href="#" class="pill-button">
-                <div class="icon-circle"><i class="fa-solid fa-fish"></i></div>
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/150" alt="Produto 04">
+                </div>
                 <span class="label">Item Pet 04 - Em breve</span>
             </a>
 
             <a href="#" class="pill-button">
-                <div class="icon-circle"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div class="icon-circle">
+                    <img src="https://via.placeholder.com/150" alt="Produto 05">
+                </div>
                 <span class="label">Item Pet 05 - Em breve</span>
             </a>
         </div>
@@ -244,8 +250,4 @@ a:focus, button:focus, .pill-button:focus {
     </div>
 
 </body>
-
 </html>
-
-
-
